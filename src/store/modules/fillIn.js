@@ -8,61 +8,61 @@ const fillIn = {
     whoseAddress: null,
     addresses: [
       {
-        id: "n111",
-        name: "阿不来提 · 阿不都热西提",
-        province: "河北省",
-        city: "秦皇岛市",
-        area: "海港区",
-        addressDetailed: "秦海路84号",
-        telephone: "15130376662",
+        id: 'n111',
+        name: '阿不来提 · 阿不都热西提',
+        province: '河北省',
+        city: '秦皇岛市',
+        area: '海港区',
+        addressDetailed: '秦海路84号',
+        telephone: '15130376662',
         isLiActive: false,
         isDefault: false,
         isDelAddress: false
       },
       {
-        id: "n222",
-        name: "阿不来提 · 石运好",
-        province: "河北省",
-        city: "秦皇岛市",
-        area: "海港区",
-        addressDetailed: "秦海路85号",
-        telephone: "15130376662",
+        id: 'n222',
+        name: '阿不来提 · 烊烊',
+        province: '河北省',
+        city: '秦皇岛市',
+        area: '海港区',
+        addressDetailed: '秦海路85号',
+        telephone: '15130376662',
         isLiActive: false,
         isDefault: true,
         isDelAddress: false
       },
       {
-        id: "n333",
-        name: "阿不来提 · 石不好",
-        province: "河北省",
-        city: "秦皇岛市",
-        area: "海港区",
-        addressDetailed: "秦海路86号",
-        telephone: "15130376662",
+        id: 'n333',
+        name: '阿不来提 · 阿烊',
+        province: '河北省',
+        city: '秦皇岛市',
+        area: '海港区',
+        addressDetailed: '秦海路86号',
+        telephone: '15130376662',
         isLiActive: true,
         isDefault: false,
         isDelAddress: false
       },
       {
-        id: "n334333",
-        name: "阿不来提 · 石好好",
-        province: "河北省",
-        city: "秦皇岛市",
-        area: "海港区",
-        addressDetailed: "秦海路87号",
-        telephone: "15130376662",
+        id: 'n334333',
+        name: '阿不来提 · 小羊',
+        province: '河北省',
+        city: '秦皇岛市',
+        area: '海港区',
+        addressDetailed: '秦海路87号',
+        telephone: '15130376662',
         isLiActive: false,
         isDefault: false,
         isDelAddress: false
       },
       {
-        id: "n334563",
-        name: "阿不来提 · 石好不好",
-        province: "河北省",
-        city: "秦皇岛市",
-        area: "海港区",
-        addressDetailed: "秦海路88号",
-        telephone: "15130376662",
+        id: 'n334563',
+        name: '阿不来提 · 小羊啊',
+        province: '河北省',
+        city: '秦皇岛市',
+        area: '海港区',
+        addressDetailed: '秦海路88号',
+        telephone: '15130376662',
         isLiActive: false,
         isDefault: false,
         isDelAddress: false
@@ -74,10 +74,10 @@ const fillIn = {
     havDetail: false,
     havDefault: false,
     //
-    name: "",
-    phoneNum: "",
-    detailAddress: "",
-    alias: ""
+    name: '',
+    phoneNum: '',
+    detailAddress: '',
+    alias: ''
   },
   mutations: {
     changeName(state, newName) {
@@ -132,36 +132,36 @@ const fillIn = {
     },
     addNewAddress(state, payload) {
       const addNew = {
-        id: "sdasda",
+        id: 'sdasda',
         name: state.name,
         telephone: state.phoneNum,
         province: payload.province,
         city: payload.city,
         area: payload.area,
-        addressDetailed: state.detailAddress + "(" + state.alias + ")",
+        addressDetailed: state.detailAddress + '(' + state.alias + ')',
         isLiActive: false,
         isDefault: state.havDefault,
         isDelAddress: false
       };
-      if (state.name === "") {
+      if (state.name === '') {
         state.havName = !state.havName;
-      } else if (state.phoneNum === "") {
+      } else if (state.phoneNum === '') {
         state.havPhoneNum = !state.havPhoneNum;
       } else if (
-        payload.province === "" &&
-        payload.city === "" &&
-        payload.area === ""
+        payload.province === '' &&
+        payload.city === '' &&
+        payload.area === ''
       ) {
         state.havWhere = !state.havWhere;
-      } else if (state.detailAddress === "") {
+      } else if (state.detailAddress === '') {
         state.havDetail = !state.havDetail;
       } else if (
-        state.name != "" &&
-        state.phoneNum != "" &&
-        payload.province != "" &&
-        payload.city != "" &&
-        payload.area != "" &&
-        state.detailAddress != ""
+        state.name != '' &&
+        state.phoneNum != '' &&
+        payload.province != '' &&
+        payload.city != '' &&
+        payload.area != '' &&
+        state.detailAddress != ''
       ) {
         state.addresses.push(addNew);
         const oldDefault = state.addresses.find(
@@ -184,30 +184,30 @@ const fillIn = {
         province: payload.province || state.whoseAddress.province,
         city: payload.city || state.whoseAddress.city,
         area: payload.area || state.whoseAddress.area,
-        addressDetailed: state.detailAddress + "(" + state.alias + ")",
+        addressDetailed: state.detailAddress + '(' + state.alias + ')',
         isLiActive: false,
         isDefault: state.havDefault,
         isDelAddress: false
       };
-      if (addNew.name === "") {
+      if (addNew.name === '') {
         addNew.havName = !addNew.havName;
-      } else if (addNew.phoneNum === "") {
+      } else if (addNew.phoneNum === '') {
         addNew.havPhoneNum = !addNew.havPhoneNum;
       } else if (
-        addNew.province === "" &&
-        addNew.city === "" &&
-        addNew.area === ""
+        addNew.province === '' &&
+        addNew.city === '' &&
+        addNew.area === ''
       ) {
         addNew.havWhere = !addNew.havWhere;
-      } else if (addNew.detailAddress === "") {
+      } else if (addNew.detailAddress === '') {
         addNew.havDetail = !addNew.havDetail;
       } else if (
-        addNew.name != "" &&
-        addNew.phoneNum != "" &&
-        addNew.province != "" &&
-        addNew.city != "" &&
-        addNew.area != "" &&
-        addNew.detailAddress != ""
+        addNew.name != '' &&
+        addNew.phoneNum != '' &&
+        addNew.province != '' &&
+        addNew.city != '' &&
+        addNew.area != '' &&
+        addNew.detailAddress != ''
       ) {
         if (oidDrtail.id === addNew.id) {
           const changeWho = state.addresses.find(item => item.id === addNew.id);
@@ -267,7 +267,7 @@ const fillIn = {
     },
     needToPays(state, getters, rootState) {
       const havGoods = rootState.checkgoods.shopCarts.filter(
-        item => item.status === "on"
+        item => item.status === 'on'
       );
       return havGoods.filter(item => item.isCheck === true);
     },
@@ -280,7 +280,7 @@ const fillIn = {
       const payFreight = 10;
       const payMoney = payPrice - payDiscount + payFreight;
       const payInfo = {
-        id: "asudyoaisu",
+        id: 'asudyoaisu',
         num: payNum,
         price: payPrice.toFixed(2),
         discount: payDiscount.toFixed(2),
